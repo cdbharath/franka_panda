@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="banana">
+    <static>false</static>
+    <link name="link">
+      <inertial>       
+        <pose>-0.009936102440002158 0.004072679186328214 0.01712688923116843 -1.5873188038595374 1.3696969889633923 2.805300109373976</pose> 
+        <mass>0.00017153252062943915</mass>
+        <inertia>
+          <ixx>4.2719946419307267e-07</ixx>
+          <ixy>4.516552657778931e-24</ixy>
+          <ixz>9.370980255872296e-23</ixz>
+          <iyy>4.1076640307383204e-07</iyy>
+          <iyz>5.611821474058033e-23</iyz>
+          <izz>4.0753878020832136e-08</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <!-- Use a downsampled mesh for collisions -->
+            <uri>model://011_banana/google_16k/textured.obj</uri>
+	        </mesh>
+        </geometry>
+        <surface>
+        <!--<friction>
+          <ode>
+            <mu>0.8</mu>
+            <mu2>0.6</mu2>
+          </ode>
+        </friction>-->
+      </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://011_banana/google_16k/textured.obj</uri>
+	        </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://011_banana/banana.material</uri>
+            <name>banana</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

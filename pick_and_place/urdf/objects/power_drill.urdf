@@ -1,0 +1,40 @@
+<robot name="power_drill">
+
+  <!-- <link name="world"/>
+
+  <joint name="world_to_base_link" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="power_drill"/>
+  </joint> -->
+
+  <link name="power_drill">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.0005808968085666661" />
+      <inertia  ixx="3.1058012590273494e-06" ixy="-6.063427395307717e-23"  ixz="-2.221703917876514e-22"  iyy="2.3564289011284853e-06"  iyz="-1.743075631141687e-22"  izz="9.038816388046967e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/power_drill.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/power_drill.obj"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <gazebo reference="power_drill">
+    <script>
+      <uri>package://pick_and_place/urdf/objects/power_drill.material</uri>
+      <name>power_drill</name>
+    </script>
+    <material>power_drill</material>
+  </gazebo>
+
+</robot>

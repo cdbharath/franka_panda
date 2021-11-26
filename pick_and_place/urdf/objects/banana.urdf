@@ -1,0 +1,40 @@
+<robot name="banana">
+
+  <!-- <link name="world"/>
+
+  <joint name="world_to_base_link" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="power_drill"/>
+  </joint> -->
+
+  <link name="banana">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.00017153252062943915" />
+      <inertia  ixx="4.2719946419307267e-07" ixy="4.516552657778931e-24"  ixz="9.370980255872296e-23"  iyy="4.1076640307383204e-07"  iyz="5.611821474058033e-23"  izz="4.0753878020832136e-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/banana.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/banana.obj"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <gazebo reference="banana">
+    <script>
+      <uri>package://pick_and_place/urdf/objects/banana.material</uri>
+      <name>banana</name>
+    </script>
+    <material>banana</material>
+  </gazebo>
+
+</robot>

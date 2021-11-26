@@ -1,0 +1,14 @@
+material power_drill
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture power_drill.png
+      }
+    }
+  }
+}

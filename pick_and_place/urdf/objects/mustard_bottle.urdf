@@ -1,0 +1,40 @@
+<robot name="mustard_bottle">
+
+  <!-- <link name="world"/>
+
+  <joint name="world_to_base_link" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="mustard_bottle"/>
+  </joint> -->
+
+  <link name="mustard_bottle">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.0006120391571167176" />
+      <inertia  ixx="0.010" ixy="0.0"  ixz="0.0"  iyy="0.010"  iyz="0.0"  izz="0.010" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/mustard_bottle.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/mustard_bottle.obj"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <gazebo reference="mustard_bottle">
+    <script>
+      <uri>package://pick_and_place/urdf/objects/mustard_bottle.material</uri>
+      <name>mustard_bottle</name>
+    </script>
+    <material>mustard_bottle</material>
+  </gazebo>
+
+</robot>

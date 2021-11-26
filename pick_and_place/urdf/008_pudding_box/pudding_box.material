@@ -1,0 +1,14 @@
+material pudding_box
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../008_pudding_box/google_16k/texture_map.png
+      }
+    }
+  }
+}

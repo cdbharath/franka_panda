@@ -1,0 +1,14 @@
+material mustard_bottle
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../006_mustard_bottle/google_16k/texture_map.png
+      }
+    }
+  }
+}
