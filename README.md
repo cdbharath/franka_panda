@@ -1,2 +1,2 @@
 # franka_panda
-Custom Franka Panda packages for pick and place problems
+Custom Franka Panda ROS packages for personal use
