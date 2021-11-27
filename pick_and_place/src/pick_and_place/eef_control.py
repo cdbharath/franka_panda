@@ -29,16 +29,16 @@ class MoveGroupControl:
         move_group = moveit_commander.MoveGroupCommander(group_name)
 
         planning_frame = move_group.get_planning_frame()
-        rospy.loginfo(" Planning frame: %s", planning_frame)
+        # rospy.loginfo(" Planning frame: %s", planning_frame)
 
         eef_link = move_group.get_end_effector_link()
-        rospy.loginfo(" End effector link: %s", eef_link)
+        # rospy.loginfo(" End effector link: %s", eef_link)
 
         group_names = robot.get_group_names()
-        rospy.loginfo(" Available Planning Groups: %s", robot.get_group_names())
+        # rospy.loginfo(" Available Planning Groups: %s", robot.get_group_names())
 
-        rospy.loginfo(" Printing robot state:")
-        rospy.loginfo(robot.get_current_state())
+        # rospy.loginfo(" Printing robot state:")
+        # rospy.loginfo(robot.get_current_state())
 
         self.robot = robot
         self.scene = scene
@@ -92,7 +92,16 @@ class MoveGroupControl:
         move_group = self.move_group
         joint_states = move_group.get_current_joint_values()
         return joint_states
-
+    
+    def get_current_robot_states(self):
+        robot = self.robot
+        current_states = robot.get_current_state()
+        return current_states
+    
+    def get_pose(self):
+        move_group = self.move_group
+        pose = move_group.get_current_pose().pose
+        return pose
     
 def all_close(goal, actual, tolerance):
     """
