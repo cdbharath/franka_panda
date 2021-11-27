@@ -1,5 +1,6 @@
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find franka_description)/robots/panda_arm_hand.urdf.xacro" />
+    <param name="robot_description_work_around" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm_camera.urdf.xacro" />
 
     <!-- GAZEBO arguments -->
     <arg name="paused" default="false" />
@@ -19,7 +20,8 @@
         <arg name="headless" value="$(arg headless)" />
     </include>
 
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description_work_around -urdf -model panda" />
+    <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda" /> -->
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find panda_simulation)/config/panda_control.yaml" command="load" />
@@ -33,19 +35,8 @@
     <!-- convert joint states to TF transforms for rviz, etc -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 
-    <!-- <include file="$(find panda_moveit_config)/launch/planning_context.launch">
-        <arg name="load_robot_description" value="true" />
-        <arg name="load_gripper" value="$(arg load_gripper)" />
-    </include>
-    <include file="$(find panda_moveit_config)/launch/move_group.launch">
-        <arg name="load_gripper" value="$(arg load_gripper)" />
-    </include>
-    <group if="$(arg gui)">
-        <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch" />
-    </group> -->
-
     <include file="$(find panda_moveit_config)/launch/planning_context.launch">
-        <arg name="load_robot_description" value="true" />
+        <!-- <arg name="load_robot_description" value="true" /> -->
         <arg name="load_gripper" value="$(arg load_gripper)" />
     </include>
     <include file="$(find panda_moveit_config)/launch/move_group.launch">
