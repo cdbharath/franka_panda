@@ -17,19 +17,22 @@
         <arg name="headless" value="$(arg headless)" />
     </include>
 
-    <param name="table" command="$(find xacro)/xacro $(find pick_and_place)/urdf/table.sdf" />
+    <!-- <param name="table" command="$(find xacro)/xacro $(find pick_and_place)/urdf/table.sdf" />
     <param name="kinect" textfile="$(find pick_and_place)/urdf/kinect.urdf" />
     <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-param table -x 0.75 -sdf -model table" />
-    <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-param kinect -urdf -model kinect" />
+    <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-param kinect -urdf -model kinect" /> -->
 
     <!-- spawn objects-->
 
     <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.57 -R 1.57 -P 2.1 -urdf -model pudding_box" output="screen"/> -->
 
-    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.6 -urdf -model pudding_box" output="screen" respawn="true"/>
+    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.6 -urdf -model pudding_box" output="screen" respawn="true"/>
     <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/mustard_bottle.urdf -x 0.75 -z 0.57 -urdf -model mustard_bottle" output="screen" respawn="true"/>
     <node name="spawn_power_drill" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/power_drill.urdf -x 0.9 -z 0.57 -urdf -model drill_box" output="screen" respawn="true"/>
     <node name="spawn_banana" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/banana.urdf -x 0.7 -y 0.1 -z 0.57  -urdf -model banana" output="screen" respawn="true"/>
-    <node name="spawn_apple" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/apple.urdf -x 0.8 -y 0.1 -z 0.57 -urdf -model apple" output="screen" respawn="true"/>
+    <node name="spawn_apple" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/apple.urdf -x 0.8 -y 0.1 -z 0.57 -urdf -model apple" output="screen" respawn="true"/> -->
+
+    <!-- <node name="spawn_box1" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/box.urdf -x 0.4 -z 0 -urdf -model box1" output="screen" respawn="false"/>
+    <node name="spawn_box2" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/box.urdf -x 0.4 -z 1 -urdf -model box2" output="screen" respawn="false"/> -->
 
 </launch>
