@@ -4,7 +4,7 @@
     <link name="world"/>
 
     <joint name="world_to_camera_joint" type="fixed">
-      <origin xyz="0.75 0 1.5" rpy="0 1.57 0"/>
+      <origin xyz="0.75 0 1.5" rpy="0 0 0"/>
       <parent link="world"/>
       <child link="camera_link"/>
     </joint>
@@ -37,7 +37,7 @@
             <!-- openni plugin has the x pointing towards the scene, so rotate to have z -->
             <pose frame="world">0.0 0.0 0.0 0.0 0.0 0.0</pose>
             <camera>
-                <horizontal_fov>0.74839718</horizontal_fov>
+                <horizontal_fov>1.047198</horizontal_fov>
                 <image>
                     <width>1024</width>
                     <height>1024</height>
@@ -66,7 +66,7 @@
                 <depthImageInfoTopicName>/kinect/camera_info</depthImageInfoTopicName>
                 <pointCloudTopicName>/kinect/point_cloud</pointCloudTopicName>
                 <frameName>kinect_body</frameName>
-                <pointCloudCutoff>0.5</pointCloudCutoff>
+                <pointCloudCutoff>0.1</pointCloudCutoff>
                 <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
                 <distortionK1>0</distortionK1>
                 <distortionK2>0</distortionK2>
@@ -81,6 +81,7 @@
             </plugin>
             <always_on>true</always_on>
             <update_rate>1.0</update_rate>
+            <visualize>true</visualize>
         </sensor>
     </gazebo>
 </robot>

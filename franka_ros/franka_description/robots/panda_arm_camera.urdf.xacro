@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Franka robot with a camera attached -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda_hand_camera">
+  <!-- Include xacro files -->
+  <xacro:include filename="$(find franka_description)/robots/panda_arm_hand.urdf.xacro"/>
+  <xacro:include filename="$(find franka_description)/robots/depth.xacro" />
+
+  <xacro:camera_gazebo_sensor xyz="0.05 -0.05 0" rpy="-1.57 -1.57 -0.785"
+			      parent="panda_link8"
+			      sensor_name="panda_camera" />
+</robot>

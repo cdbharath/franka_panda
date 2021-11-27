@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="camera">
+  <xacro:macro name="camera_gazebo_sensor" params="xyz rpy parent sensor_name">
+
+    <!-- joint/link data -->
+    <!-- You can modify this to give the camera actual geometry -->
+    <link name="camera_link"></link>
+    <link name="${sensor_name}_optical_link"></link>
+    
+    <joint name="robot_camera_joint" type="fixed">
+      <origin xyz="${xyz}" rpy="${rpy}" />
+      <parent link="${parent}" />
+      <child link="camera_link" />
+    </joint>
+    <joint name="camera_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.57 0 -1.57" />
+      <parent link="camera_link" />
+      <child link="${sensor_name}_optical_link" />
+    </joint>
+
+
+    <!-- Sensor -->
+    <gazebo reference="camera_link">
+      
+    <sensor type="depth" name="${sensor_name}">
+	<always_on>1</always_on>
+	<visualize>true</visualize>
+	<update_rate>0</update_rate>
+	<camera>
+	  <horizontal_fov>1.047198</horizontal_fov>
+	  <image>
+	    <width>1024</width>
+	    <height>1024</height>
+	    <format>B8G8R8</format>  <!--Changed format since channels were inverted, to go back, change to R8G8B8-->
+	  </image>
+	  <clip>
+	    <near>0.01</near>
+	    <far>3</far>
+	  </clip>
+	</camera>
+
+	<plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+	  <baseline>0.2</baseline>
+	  <alwaysOn>true</alwaysOn>
+	  <updateRate>0.0</updateRate>
+	  <cameraName>/${sensor_name}</cameraName>
+	  <imageTopicName>/${sensor_name}/rgb/image_raw</imageTopicName>
+	  <cameraInfoTopicName>/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
+	  <depthImageTopicName>/${sensor_name}/depth/image_raw</depthImageTopicName>
+	  <depthImageInfoTopicName>/${sensor_name}/depth/camera_info</depthImageInfoTopicName>
+	  <pointCloudTopicName>/${sensor_name}/depth/points</pointCloudTopicName>
+	  <frameName>${sensor_name}_optical_link</frameName>
+	  <pointCloudCutoff>0.1</pointCloudCutoff>
+	  <pointCloudCutoffMax>3</pointCloudCutoffMax>
+	  <distortionK1>0</distortionK1>
+	  <distortionK2>0</distortionK2>
+	  <distortionK3>0</distortionK3>
+	  <distortionT1>0</distortionT1>
+	  <distortionT2>0</distortionT2>
+	  <CxPrime>0</CxPrime>
+	  <Cx>0</Cx>
+	  <Cy>0</Cy>
+	  <focalLength>0</focalLength>
+	  <hackBaseline>0</hackBaseline>
+	</plugin>
+      </sensor>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

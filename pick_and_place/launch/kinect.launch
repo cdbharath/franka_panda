@@ -1,23 +1,5 @@
 <launch>
 
-    <!-- GAZEBO arguments -->
-    <arg name="paused" default="false" />
-    <arg name="use_sim_time" default="true" />
-    <arg name="gui" default="true" />
-    <arg name="headless" default="false" />
-    <arg name="debug" default="false" />
-    <arg name="load_gripper" default="true" />
-
-    <!--launch GAZEBO with own world configuration -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <!-- <arg name="world_name" value="$(find robotics_assisted_tomography)/worlds/tomography.world"/> -->
-        <arg name="debug" value="$(arg debug)" />
-        <arg name="gui" value="$(arg gui)" />
-        <arg name="paused" value="$(arg paused)" />
-        <arg name="use_sim_time" value="$(arg use_sim_time)" />
-        <arg name="headless" value="$(arg headless)" />
-    </include>
-
     <param name="table" command="$(find xacro)/xacro $(find pick_and_place)/urdf/table.sdf" />
     <param name="kinect" textfile="$(find pick_and_place)/urdf/kinect.urdf" />
     <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-param table -x 0.75 -sdf -model table" />
@@ -25,12 +7,13 @@
 
     <!-- spawn objects-->
 
-    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.57 -R 1.57 -P 2.1 -urdf -model pudding_box" output="screen"/> -->
+    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.6 -R 1.57 -P 2.1 -urdf -model pudding_box" output="screen"/>
 
-    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.6 -urdf -model pudding_box" output="screen" respawn="true"/>
+    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.6 -urdf -model pudding_box" output="screen" respawn="true"/>
     <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/mustard_bottle.urdf -x 0.75 -z 0.57 -urdf -model mustard_bottle" output="screen" respawn="true"/>
     <node name="spawn_power_drill" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/power_drill.urdf -x 0.9 -z 0.57 -urdf -model drill_box" output="screen" respawn="true"/>
     <node name="spawn_banana" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/banana.urdf -x 0.7 -y 0.1 -z 0.57  -urdf -model banana" output="screen" respawn="true"/>
-    <node name="spawn_apple" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/apple.urdf -x 0.8 -y 0.1 -z 0.57 -urdf -model apple" output="screen" respawn="true"/>
+    <node name="spawn_apple" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/apple.urdf -x 0.8 -y 0.1 -z 0.57 -urdf -model apple" output="screen" respawn="true"/> -->
+    <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_kinect_tf" args="0.75 0 1.5 0 3.14 1.57 world kinect_body 10" /> -->
 
 </launch>
