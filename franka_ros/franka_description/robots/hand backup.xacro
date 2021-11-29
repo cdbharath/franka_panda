@@ -35,11 +35,6 @@
           <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
         </geometry>
       </visual>
-      <collision>
-        <geometry>
-          <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
-        </geometry>
-      </collision>
 
       <!-- for simulation -->
       <inertial>
@@ -56,12 +51,6 @@
           <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
         </geometry>
       </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
-        <geometry>
-          <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
-        </geometry>
-      </collision>
 
       <!-- for simulation -->
       <inertial>
@@ -86,21 +75,5 @@
       <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
       <mimic joint="${ns}_finger_joint1" />
     </joint>
-
-    <!-- <gazebo reference="${ns}_leftfinger">
-      <kp>10000000.0</kp>
-      <kd>1.0</kd>
-      <mu1>100000.0</mu1>
-      <mu2>100000.0</mu2>
-      <minDepth>0.001</minDepth>
-    </gazebo>
-    <gazebo reference="${ns}_rightfinger">
-      <kp>10000000.0</kp>
-      <kd>1.0</kd>
-      <mu1>100000.0</mu1>
-      <mu2>100000.0</mu2>
-      <minDepth>0.001</minDepth>
-    </gazebo> -->
-
   </xacro:macro>
 </robot>

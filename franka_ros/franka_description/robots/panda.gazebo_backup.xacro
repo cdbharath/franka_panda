@@ -4,7 +4,6 @@
         <xacro:macro name="arm_gazebo" params="link">
             <gazebo reference="${link}">
                 <material>Gazebo/White</material>
-                <implicitSpringDamper>1</implicitSpringDamper>
                 <mu1>0.2</mu1>
                 <mu2>0.2</mu2>
             </gazebo>
@@ -12,12 +11,8 @@
         <xacro:macro name="hand_gazebo" params="link">
             <gazebo reference="${link}">
                 <material>Gazebo/Grey</material>
-                <implicitSpringDamper>1</implicitSpringDamper>
-                <kp>1000000.0</kp>
-                <kd>1.0</kd>
-                <mu1>1.0</mu1>
-                <mu2>1.0</mu2>
-                <minDepth>0.001</minDepth>
+                <mu1>0.2</mu1>
+                <mu2>0.2</mu2>
             </gazebo>
         </xacro:macro>
         <xacro:arm_gazebo link="${arm_id}_link0"/>

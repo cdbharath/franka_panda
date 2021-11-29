@@ -10,28 +10,28 @@
   
     <link name="box_link">
       <inertial>
-        <origin xyz="0 0 0" />
+        <origin xyz="0 0 0.04" />
         <mass value="0.0006120391571167176" />
         <inertia  ixx="0.010" ixy="0.0"  ixz="0.0"  iyy="0.010"  iyz="0.0"  izz="0.010" />
       </inertial>
       <visual>
-        <origin xyz="0 0 0.0"/>
+        <origin xyz="0 0 0.04"/>
         <geometry>
-          <box size="0.05 0.05 0.05"/>
+          <box size="0.08 0.04 0.08"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0.0"/>
+        <origin xyz="0 0 0.04"/>
         <geometry>
-          <box size="0.05 0.05 0.05"/>
+          <box size="0.08 0.04 0.08"/>
         </geometry>
       </collision>
     </link>
   
   
     <gazebo reference="box_link">
-      <kp>10000000.0</kp>
-      <kd>1.0</kd>
+      <!-- <kp>10000000.0</kp>
+      <kd>1.0</kd> -->
       <mu1>100000.0</mu1>
       <mu2>100000.0</mu2>
       <minDepth>0.001</minDepth>
