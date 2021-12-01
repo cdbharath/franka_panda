@@ -8,6 +8,7 @@
     <!-- This is a workaround, Not sure how it exactly works.Check on this later-->
     <node pkg="tf" type="static_transform_publisher" name="world_to_kinect" args="0.75 0 1.5 1.57 3.14 0 world camera_link 10" />
 
+    <node name="bin" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/bin.urdf -urdf -model bin -y 0.4 -x -0.0 -z 0.05" />
     <!-- spawn objects-->
     <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box.urdf -x 0.6 -z 0.6 -R 1.57 -P 2.1 -urdf -model pudding_box" output="screen"/> -->    
     <!-- <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/mustard_bottle.urdf -x 0.4 -z 0 -urdf -model mustard_bottle" output="screen" respawn="false"/> -->
