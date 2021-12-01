@@ -12,12 +12,12 @@ if __name__ == "__main__":
 
     finger1_pub = rospy.Publisher('/panda_finger1_controller/command', Float64, queue_size=10)
     finger2_pub = rospy.Publisher('/panda_finger2_controller/command', Float64, queue_size=10)
-    rospy.sleep(1)
+    rospy.sleep(2)
         
     finger1_data = Float64()
-    finger1_data.data = 0.01
+    finger1_data.data = 0.025
     finger2_data = Float64()
-    finger2_data.data = 0.01
+    finger2_data.data = 0.025
     
     # moveit_control.go_to_joint_state()    
     # moveit_control.go_to_pose_goal(0.5, 0.0, 0.5, 0, 0, 0)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     (x, y, z) = (pose.position.x, pose.position.y, pose.position.z) 
     (roll, pitch, yaw) = tf.transformations.euler_from_quaternion((pose.orientation.w, pose.orientation.x, pose.orientation.y, pose.orientation.z))
     print(roll, pitch, yaw)
-    moveit_control.go_to_pose_goal(0.4, 0.0, 0.16, 0 + pi/4, 0, pi) # yaw - pi/4, _, roll
+    moveit_control.go_to_pose_goal(0.4, 0.0, 0.2, 0 + pi/4, 0, pi) # yaw - pi/4, _, roll
     
     rospy.loginfo("Ending gracefully")
     
