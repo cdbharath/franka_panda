@@ -30,8 +30,8 @@
   
   
     <gazebo reference="box_link">
-      <!-- <kp>10000000.0</kp>
-      <kd>1.0</kd> -->
+      <kp>10000000.0</kp>
+      <kd>1.0</kd>
       <mu1>100000.0</mu1>
       <mu2>100000.0</mu2>
       <minDepth>0.001</minDepth>

@@ -18,6 +18,6 @@
     <!-- <node name="spawn_banana" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/banana.urdf -x 0.7 -y 0.1 -z 0.57  -urdf -model banana" output="screen" respawn="true"/> -->
     <!-- <node name="spawn_apple" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/apple.urdf -x 0.8 -y 0.1 -z 0.57 -urdf -model apple" output="screen" respawn="true"/> -->
 
-    <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/box.urdf -x 0.4 -z 0 -urdf -model box" output="screen" respawn="false"/>
+    <node name="spawn_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/red_box.urdf -x 0.4 -z 0 -urdf -model box" output="screen" respawn="false"/>
 
 </launch>

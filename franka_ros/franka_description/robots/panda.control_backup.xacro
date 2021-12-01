@@ -17,10 +17,10 @@
             <transmission name="${transmission}">
                 <type>transmission_interface/SimpleTransmission</type>
                 <joint name="${joint}">
-                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
                 </joint>
                 <actuator name="${motor}">
-                    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                    <hardwareInterface>hardware_interface/PosiitonJointInterface</hardwareInterface>
                     <mechanicalReduction>1</mechanicalReduction>
                 </actuator>
             </transmission>
@@ -38,7 +38,6 @@
         </xacro:if>
         <gazebo>
             <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
-            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </gazebo>
     </xacro:macro>
 </robot>
