@@ -7,7 +7,7 @@ Custom Franka Panda ROS packages for personal use
 
 Follow the installation instructions from [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
 
-Run the following command after buildin and sourcing the workspace
+Run the following command after building and sourcing the workspace
 ```
 roslaunch panda_simulation panda_simulation_effort.launch
 ```
