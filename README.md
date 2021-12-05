@@ -5,7 +5,7 @@ Custom Franka Panda ROS packages for personal use
 
 How to run the simulation:
 
-Follow the installation instructions from [I'm an inline-style link with title](https://erdalpekel.de/?p=55 "Erdals Blog")
+Follow the installation instructions from [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
 
 Run the following command after sourcing the workspace
 ```
@@ -13,5 +13,5 @@ roslaunch panda_simulation panda_simulation_effort.launch
 ```
 ## References
 
-1. [I'm an inline-style link with title](https://erdalpekel.de/?p=55 "Erdals Blog")
-2. [I'm an inline-style link with title](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin")
+1. [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
+2. [Grasp Plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin")
