@@ -3,7 +3,7 @@
     <param name="table" command="$(find xacro)/xacro $(find pick_and_place)/urdf/table.sdf" />
     <param name="kinect" textfile="$(find pick_and_place)/urdf/kinect.urdf" />
     <!-- <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-param table -x 0.75 -sdf -model table" /> -->
-    <!-- <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-param kinect -urdf -model kinect" /> -->
+    <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-param kinect -urdf -model kinect" />
 
     <!-- This is a workaround, Not sure how it exactly works.Check on this later-->
     <node pkg="tf" type="static_transform_publisher" name="world_to_kinect" args="0.75 0 1.5 1.57 3.14 0 world camera_link 10" />
