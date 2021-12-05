@@ -3,7 +3,7 @@ Custom Franka Panda ROS packages for personal use
 
 ![alt text](./data/pick&place.gif "Pick and Place")
 
-## How to run the simulation:
+## How to run the simulation
 
 Follow the installation instructions from [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
 
