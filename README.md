@@ -3,11 +3,11 @@ Custom Franka Panda ROS packages for personal use
 
 ![alt text](./data/pick&place.gif "Pick and Place")
 
-How to run the simulation:
+##How to run the simulation:
 
 Follow the installation instructions from [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
 
-Run the following command after sourcing the workspace
+Run the following command after buildin and sourcing the workspace
 ```
 roslaunch panda_simulation panda_simulation_effort.launch
 ```
