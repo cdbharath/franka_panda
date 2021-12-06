@@ -15,9 +15,9 @@ if __name__ == "__main__":
     rospy.sleep(2)
         
     finger1_data = Float64()
-    finger1_data.data = 0.025
+    finger1_data.data = 0.05
     finger2_data = Float64()
-    finger2_data.data = 0.025
+    finger2_data.data = 0.05
     
     # moveit_control.go_to_joint_state()    
     # moveit_control.go_to_pose_goal(0.5, 0.0, 0.5, 0, 0, 0)
@@ -39,3 +39,24 @@ if __name__ == "__main__":
     
     rospy.loginfo("Ending gracefully")
     
+    moveit_control.go_to_pose_goal(0.4, 0.0, 0.115, 0 + pi/4, 0, pi) # yaw - pi/4, _, roll
+
+    finger1_data = Float64()
+    finger1_data.data = 0.025
+    finger2_data = Float64()
+    finger2_data.data = 0.025
+    finger1_pub.publish(finger1_data)
+    finger2_pub.publish(finger2_data)
+
+    rospy.sleep(1)
+    
+    moveit_control.go_to_pose_goal(0.4, 0.0, 0.4, 0 + pi/4, 0, pi) # yaw - pi/4, _, roll
+    moveit_control.go_to_pose_goal(0.0, 0.4, 0.4, 0 + pi/4, 0, pi) # yaw - pi/4, _, roll
+
+    finger1_data = Float64()
+    finger1_data.data = 0.05
+    finger2_data = Float64()
+    finger2_data.data = 0.05
+    finger1_pub.publish(finger1_data)
+    finger2_pub.publish(finger2_data)
+    rospy.sleep(1)

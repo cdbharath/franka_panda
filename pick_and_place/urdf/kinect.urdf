@@ -4,7 +4,7 @@
     <link name="world"/>
 
     <joint name="world_to_camera_joint" type="fixed">
-      <origin xyz="0.75 0 1.5" rpy="0 1.57 0"/>
+      <origin xyz="0.5 0 1.0" rpy="0 1.57 0"/>
       <parent link="world"/>
       <child link="camera_link"/>
     </joint>
@@ -61,10 +61,10 @@
                 will control the frame rate. -->
                 <updateRate>0.0</updateRate>
                 <cameraName>kinect</cameraName>
-                <imageTopicName>/kinect/image_raw</imageTopicName>
-                <cameraInfoTopicName>/kinect/camera_info</cameraInfoTopicName>
-                <depthImageTopicName>/kinect/image_raw_depth</depthImageTopicName>
-                <depthImageInfoTopicName>/kinect/camera_info</depthImageInfoTopicName>
+                <imageTopicName>/kinect/rgb/image_raw</imageTopicName>
+                <cameraInfoTopicName>/kinect/rgb/camera_info</cameraInfoTopicName>
+                <depthImageTopicName>/kinect/depth/image_raw</depthImageTopicName>
+                <depthImageInfoTopicName>/kinect/depth/camera_info</depthImageInfoTopicName>
                 <pointCloudTopicName>/kinect/point_cloud</pointCloudTopicName>
                 <frameName>camera_link</frameName>
                 <pointCloudCutoff>0.1</pointCloudCutoff>
