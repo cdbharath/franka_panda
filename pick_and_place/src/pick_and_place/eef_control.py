@@ -7,7 +7,7 @@ import geometry_msgs.msg
 import sys
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 from moveit_commander.conversions import pose_to_list
-
+from copy import deepcopy
 from math import pi, fabs, sqrt, cos
 
 tau = 2*pi
@@ -88,6 +88,31 @@ class MoveGroupControl:
         current_pose = self.move_group.get_current_pose().pose
         return all_close(pose_goal, current_pose, 0.01)
 
+    def follow_cartesian_path(self, waypoints):
+        move_group = self.move_group
+        pose = self.get_current_pose()
+        cartesian_points = []
+        
+        for waypoint in waypoints:
+            qw, qx, qy, qz = quaternion_from_euler(waypoint[3], waypoint[4], waypoint[5])
+            
+            pose_ = deepcopy(pose)
+            pose_.position.x = waypoint[0]
+            pose_.position.y = waypoint[1]
+            pose_.position.z = waypoint[2]
+            pose_.orientation.w = qw
+            pose_.orientation.x = qx
+            pose_.orientation.y = qy
+            pose_.orientation.z = qz        
+            
+            cartesian_points.append(pose_)
+            
+            (plan, _) = move_group.compute_cartesian_path(
+                                   cartesian_points,    # waypoints to follow
+                                   0.01,                # eef_step
+                                   0.0)                 # jump_threshold
+            move_group.execute(plan, wait=True)
+
     def get_current_joint_states(self):
         move_group = self.move_group
         joint_states = move_group.get_current_joint_values()
@@ -98,7 +123,7 @@ class MoveGroupControl:
         current_states = robot.get_current_state()
         return current_states
     
-    def get_pose(self):
+    def get_current_pose(self):
         move_group = self.move_group
         pose = move_group.get_current_pose().pose
         return pose
