@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from pick_and_place.eef_control import MoveGroupControl
+from pick_and_place_module.eef_control import MoveGroupControl
 
 if __name__ == "__main__":
     moveit_control = MoveGroupControl()

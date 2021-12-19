@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 
 import rospy
-from pick_and_place.eef_control import MoveGroupControl
+from pick_and_place_module.eef_control import MoveGroupControl
 from std_msgs.msg import Float64
 from math import pi
 import tf
