@@ -1,0 +1,14 @@
+material screw_driver
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture screw_driver.png
+      }
+    }
+  }
+}

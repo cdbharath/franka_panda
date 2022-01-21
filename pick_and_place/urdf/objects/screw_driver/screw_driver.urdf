@@ -1,0 +1,44 @@
+<robot name="screw_driver">
+
+  <!-- <link name="world"/>
+
+  <joint name="world_to_base_link" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="screw_driver"/>
+  </joint> -->
+
+  <link name="screw_driver">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.0002465953911687125" />
+      <inertia  ixx="1.5346617709147597e-07" ixy="-1.944574775393758e-23"  ixz="1.3580856376717886e-24"  iyy="1.5237248423959713e-07"  iyz="6.007441597418955e-24"  izz="1.5058285191115322e-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/screw_driver/screw_driver.obj"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0"/>
+      <geometry>
+        <mesh filename="package://pick_and_place/urdf/objects/screw_driver/screw_driver.obj"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="screw_driver">
+    <script>
+      <uri>package://pick_and_place/urdf/objects/screw_driver/screw_driver.material</uri>
+      <name>screw_driver</name>
+    </script>
+    <material>screw_driver</material>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>100000.0</mu1>
+    <mu2>100000.0</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+</robot>
