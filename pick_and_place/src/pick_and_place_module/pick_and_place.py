@@ -100,3 +100,56 @@ class PickAndPlace:
                         
         self.gripper.grasp(0.05, 0.05)
         rospy.sleep(2)        
+
+    def execute_cartesian_pick_up(self):
+        move_group = self.moveit_control
+        
+        self.gripper.grasp(0.05, 0.05)
+        rospy.sleep(2)        
+        
+        waypoints = self.generate_waypoints(self.pick_pose, 0)
+        rospy.loginfo("Generated waypoints for pick: %s", waypoints)
+        # self.moveit_control.follow_cartesian_path(waypoints)
+        for waypoint in waypoints:
+            rospy.loginfo("Executing waypoint: %s", waypoint)
+            self.moveit_control.follow_cartesian_path([waypoint])
+
+        self.gripper.grasp(self.gripper_pose[0], self.gripper_pose[1])
+        rospy.sleep(2)
+        
+        waypoints = []
+        current_pose_ = deepcopy(self.pick_pose)
+        current_pose_[2] = self.intermediate_z_stop
+        waypoints.append(current_pose_)
+
+        for waypoint in waypoints:
+            rospy.loginfo("Executing waypoint: %s", waypoint)
+            self.moveit_control.follow_cartesian_path([waypoint])
+
+        rospy.sleep(2)        
+
+    def execute_pick_up(self):
+        move_group = self.moveit_control
+
+        self.gripper.grasp(0.05, 0.05)
+        rospy.sleep(2)        
+
+        waypoints = self.generate_waypoints(self.pick_pose, 0)
+        
+        for waypoint in waypoints:
+            rospy.loginfo("Executing waypoint: %s", waypoint)
+            move_group.go_to_pose_goal(waypoint[0], waypoint[1], waypoint[2], waypoint[3], waypoint[4], waypoint[5])
+
+        self.gripper.grasp(self.gripper_pose[0], self.gripper_pose[1])
+        rospy.sleep(2)
+            
+        waypoints = []
+        current_pose = move_group.get_current_pose()
+        current_pose[2] = self.intermediate_z_stop
+        waypoints.append(deepcopy(current_pose))
+        
+        for waypoint in waypoints:
+            rospy.loginfo("Executing waypoint: %s", waypoint)
+            move_group.go_to_pose_goal(waypoint[0], waypoint[1], waypoint[2], waypoint[3], waypoint[4], waypoint[5])
+                        
+        rospy.sleep(2)        
