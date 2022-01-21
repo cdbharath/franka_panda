@@ -1,8 +1,0 @@
-<KinBody name="006_mustard_bottle">
-  <Body type="static" name="006_mustard_bottle">
-    <Geom type="trimesh">
-      <Render>./nontextured.stl</Render>
-      <Data>./nontextured.stl</Data>
-    </Geom>
-  </Body>
-</KinBody>
