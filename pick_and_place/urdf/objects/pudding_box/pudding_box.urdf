@@ -30,6 +30,10 @@
 
 
   <gazebo reference="pudding_box">
+    <script>
+      <uri>package://pick_and_place/urdf/objects/pudding_box/pudding_box.material</uri>
+      <name>pudding_box</name>
+    </script>
     <material>pudding_box</material>
     <!-- <kp>10000000.0</kp>
     <kd>1.0</kd> -->

@@ -8,12 +8,12 @@
     <!-- This is a workaround, Not sure how it exactly works.Check on this later-->
     <node pkg="tf" type="static_transform_publisher" name="world_to_kinect" args="0.5 0 1.0 1.57 3.14 0 world camera_link 10" />
 
-    <node name="bin" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/bin.urdf -urdf -model bin -y 0.4 -x -0.0 -z 0.05" />
+    <!-- <node name="bin" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/bin.urdf -urdf -model bin -y 0.4 -x -0.0 -z 0.05" /> -->
 
     <!-- spawn objects-->
 
     <!-- 0 degree poses -->
-    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y -0.45 -urdf -model pudding_box" output="screen"/>
+    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y -0.45 -urdf -model pudding_box" output="screen"/> -->
     <!-- <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/mustard_bottle/mustard_bottle.urdf -x 0.5 -Y 0.45 -urdf -model mustard_bottle" output="screen"/> -->
     <!-- <node name="spawn_power_drill" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/power_drill/power_drill.urdf -x 0.5 -urdf -model drill_box" output="screen" /> -->
     <!-- <node name="spawn_banana" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/banana/banana.urdf -x 0.5 -urdf -model banana" output="screen" /> -->
@@ -27,4 +27,9 @@
     <!-- <node name="spawn_screw_driver" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/screw_driver/screw_driver.urdf -x 0.5 -urdf -model screw_driver" output="screen"/>  -->
     <!-- <node name="spawn_tennis_ball" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/tennis_ball/tennis_ball.urdf -x 0.5 -urdf -model tennis_ball" output="screen"/>  -->
 
+    <!-- other degree poses -->
+    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y -0.45 -urdf -model pudding_box" output="screen"/> -->
+    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y 1.12 -urdf -model pudding_box" output="screen"/> -->
+    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y 0.33 -urdf -model pudding_box" output="screen"/>
+    
 </launch>

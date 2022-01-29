@@ -115,7 +115,7 @@ class PickAndPlace:
             self.moveit_control.follow_cartesian_path([waypoint])
 
         self.gripper.grasp(self.gripper_pose[0], self.gripper_pose[1])
-        rospy.sleep(2)
+        rospy.sleep(1)
         
         waypoints = []
         current_pose_ = deepcopy(self.pick_pose)
@@ -126,7 +126,7 @@ class PickAndPlace:
             rospy.loginfo("Executing waypoint: %s", waypoint)
             self.moveit_control.follow_cartesian_path([waypoint])
 
-        rospy.sleep(2)        
+        rospy.sleep(1)        
 
     def execute_pick_up(self):
         move_group = self.moveit_control
@@ -141,7 +141,7 @@ class PickAndPlace:
             move_group.go_to_pose_goal(waypoint[0], waypoint[1], waypoint[2], waypoint[3], waypoint[4], waypoint[5])
 
         self.gripper.grasp(self.gripper_pose[0], self.gripper_pose[1])
-        rospy.sleep(2)
+        rospy.sleep(3)
             
         waypoints = []
         current_pose = move_group.get_current_pose()
