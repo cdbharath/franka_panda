@@ -7,17 +7,29 @@ from std_msgs.msg import Float64
 from math import pi
 import tf
 
-def test_benchmark():
-    moveit_control = MoveGroupControl()
+def pick():
     pick_and_place = PickAndPlace(0.05, 0.5)
     
     pick_and_place.setDropPose(0.0, 0.4, 0.4, 0, pi, 0)
-    pick_and_place.setPickPose(0.50, 0.0, 0.12, 0*3.14/180, pi, 0)
-    pick_and_place.setGripperPose(0.008, 0.008)
+    pick_and_place.setPickPose(0.51, 0.02, 0.08, 0*3.14/180, pi, 0)
+    pick_and_place.setGripperPose(0.01, 0.01)
+    
+    # pick_and_place.execute_pick_and_place()
+    # pick_and_place.execute_cartesian_pick_and_place()
+    pick_and_place.execute_cartesian_pick_up()
+
+
+def test_benchmark():
+    moveit_control = MoveGroupControl()
+    # pick_and_place = PickAndPlace(0.05, 0.5)
+    
+    # pick_and_place.setDropPose(0.0, 0.4, 0.4, 0, pi, 0)
+    # pick_and_place.setPickPose(0.50, 0.0, 0.12, 0*3.14/180, pi, 0)
+    # pick_and_place.setGripperPose(0.008, 0.008)
     
     
     # Pick up the object
-    pick_and_place.execute_cartesian_pick_up()
+    # pick_and_place.execute_cartesian_pick_up()
 
     # Rotate the object
     pose = moveit_control.get_current_pose()
@@ -52,4 +64,5 @@ def test_benchmark():
 
 
 if __name__ == "__main__":
+    pick()
     test_benchmark()
