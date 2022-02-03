@@ -4,6 +4,7 @@ Custom Franka Panda ROS packages for personal use
 ![alt text](./data/pick&place.gif "Pick and Place")
 
 ## How to run the simulation
+Install libfranka library. Follow the instructions [here](https://frankaemika.github.io/docs/installation_linux.html "here")
 
 Run the following command after building and sourcing the workspace
 ```
