@@ -4,11 +4,9 @@ Custom Franka Panda ROS packages for personal use
 ![alt text](./data/pick&place.gif "Pick and Place")
 
 ## How to run the simulation
-Follow the instructions [here](https://frankaemika.github.io/docs/installation_linux.html "here") to install 'libfranka' library
-
-NOTE: Include the following tags while building the packages 
+Clone the repo in your ROS workspace and install libfranka library
 ```
-catkin build -DCMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=/path/to/libfranka/build
+sudo apt install ros-<distro>-libfranka
 ```
 Run the following command after building and sourcing the workspace
 ```
