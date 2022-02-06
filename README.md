@@ -30,4 +30,3 @@ pick_and_place.execute_pick_and_place()
 
 1. [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
 2. [Grasp Plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin")
-3. Eye in hand depth sensor reference code - Vision-based Robotic Manipulation course, Prof. Berk Calli, Worcester Polytechnic Institute
