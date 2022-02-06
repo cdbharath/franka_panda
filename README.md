@@ -4,7 +4,7 @@ Custom Franka Panda ROS packages for personal use
 ![alt text](./data/pick&place.gif "Pick and Place")
 
 ## How to run the simulation
-Clone the repo in your ROS workspace and install libfranka library
+Clone the repo in your ROS workspace and install libfranka library with the following command
 ```
 sudo apt install ros-<distro>-libfranka
 ```
