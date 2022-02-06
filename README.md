@@ -1,5 +1,5 @@
 # Franka Panda - Pick and Place
-Custom Franka Panda ROS packages for personal use
+Custom Franka Panda ROS packages for pick and place operations
 
 ![alt text](./data/pick&place.gif "Pick and Place")
 
