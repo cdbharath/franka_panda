@@ -13,7 +13,7 @@
     <!-- spawn objects-->
 
     <!-- 0 degree poses -->
-    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y -0.45 -urdf -model pudding_box" output="screen"/> -->
+    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y -0.45 -urdf -model pudding_box" output="screen"/>
     <!-- <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/mustard_bottle/mustard_bottle.urdf -x 0.5 -Y 0.45 -urdf -model mustard_bottle" output="screen"/> -->
     <!-- <node name="spawn_power_drill" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/power_drill/power_drill.urdf -x 0.5 -urdf -model drill_box" output="screen" /> -->
     <!-- <node name="spawn_banana" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/banana/banana.urdf -x 0.5 -urdf -model banana" output="screen" /> -->
@@ -30,6 +30,6 @@
     <!-- other degree poses -->
     <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y -0.45 -urdf -model pudding_box" output="screen"/> -->
     <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y 1.12 -urdf -model pudding_box" output="screen"/> -->
-    <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y 0.33 -urdf -model pudding_box" output="screen"/>
+    <!-- <node name="spawn_pudding_box" pkg="gazebo_ros" type="spawn_model" args="-file $(find pick_and_place)/urdf/objects/pudding_box/pudding_box.urdf -x 0.5 -z 0.0 -Y 0.33 -urdf -model pudding_box" output="screen"/> -->
     
 </launch>

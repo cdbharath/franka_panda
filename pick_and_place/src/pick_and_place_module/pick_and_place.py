@@ -1,8 +1,6 @@
-#!/usr/bin/env python2 
-
 import rospy
-from eef_control import MoveGroupControl
-from grasping import Gripper
+from pick_and_place_module.eef_control import MoveGroupControl
+from pick_and_place_module.grasping import Gripper
 from copy import deepcopy
 from math import pi
 
