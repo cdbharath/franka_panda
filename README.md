@@ -1,5 +1,5 @@
 # Franka Panda - Pick and Place
-Franka Panda ROS package for pick and place operations. This repo provides high level APIs for executing pick and place of objects. A workaround for grasping is implemented with [Grasp Plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin").  
+Franka Panda ROS package for pick and place operations. This repo provides high level APIs for executing pick and place of objects. A workaround for grasping is implemented with [Grasp Plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin"). Includes both overhead and eye in hand RGBD sensor.
 
 ![alt text](./data/pick&place.gif "Pick and Place")
 
