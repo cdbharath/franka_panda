@@ -38,5 +38,6 @@ pick_and_place.execute_cartesian_pick_and_place()    # For execution in cartesia
 
 ## References
 
-1. [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
-2. [Grasp Plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin")
+1. [Franka ROS](https://frankaemika.github.io/docs/franka_ros.html "Franka ROS")
+2. [Erdals Blog](https://erdalpekel.de/?p=55 "Erdals Blog")
+3. [Grasp Plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp Plugin")
